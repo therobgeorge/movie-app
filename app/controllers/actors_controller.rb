@@ -6,4 +6,10 @@ class ActorsController < ApplicationController
   def all_actors 
     render json: Actor.all.as_json
   end
+
+  def actor_search
+    name = params["first_name"]
+    actor = Actor.find_by(first_name: "#{name}")
+    render json: actor.as_json
+  end
 end
