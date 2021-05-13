@@ -17,8 +17,12 @@ class ActorsController < ApplicationController
       age: params[:age],
       gender: params[:gender]
     )
-    actor.save
-    render json: actor.as_json
+
+    if actor.save
+      render json: actor.as_json
+    else
+      render json: {errors: actor.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def update
