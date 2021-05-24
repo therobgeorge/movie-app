@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   patch "/movies/:id", controller: "movies", action: "update"
   delete "/movies/:id", controller: "movies", action: "destroy"
 
+  #user routes
+  post "/users", controller: "users", action: "create"
+  post "/sessions", controller: "sessions", action: "create"
+
 end
