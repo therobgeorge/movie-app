@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   post "/users", controller: "users", action: "create"
   post "/sessions", controller: "sessions", action: "create"
 
+  #movie_genre routes
+  post "/movie_genres", controller: "movie_genres", action: "create"
+
 end
